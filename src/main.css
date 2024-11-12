@@ -1,0 +1,168 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button,
+input {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  background-color: var(--clr-accent);
+  border: none;
+  box-shadow: 0 0 1px #333;
+}
+
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.wrapper > * {
+  padding: 1rem;
+}
+
+.nav {
+  margin-bottom: 1rem;
+}
+
+.window {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1rem;
+}
+
+.window > * {
+  height: 200px;
+}
+
+.window > * > * {
+  padding: 0.5rem 1rem;
+}
+
+.window > *:last-child {
+  grid-column: 1 / -1;
+  height: 400px;
+}
+
+/* GLOBAL */
+:root {
+  --clr-primary: #a2d2ff;
+  --clr-primary-2: #b6d5f1;
+  --clr-secondary: #bde0fe;
+  --clr-secondary-2: #cfe4f7;
+  --clr-accent: #d3cff3;
+}
+
+.header {
+  background-color: var(--clr-primary);
+  border-radius: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3rem;
+}
+
+.widget {
+  box-shadow: 0 0 5px #333;
+  border-radius: 10px;
+  background-color: var(--clr-secondary);
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+#loader {
+  border: 3px solid #333;
+  border-left: 3px solid transparent;
+  border-radius: 999px;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -80%;
+  animation: rotate 1000ms infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* NAV */
+.nav {
+  height: 2rem;
+}
+
+.nav-search-input {
+  cursor: auto;
+  width: 50ch;
+  text-align: center;
+}
+
+.nav-search-input,
+.nav-search-button {
+  height: 100%;
+  margin-right: 1rem;
+  background-color: var(--clr-secondary-2);
+}
+
+/* WINDOW GLOBAL */
+.location .days-header,
+.days-day,
+.days-options {
+  display: flex;
+  gap: 1rem;
+}
+
+/* LOCATION */
+.location {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-description {
+  display: grid;
+  align-items: center;
+  font-size: 1.3rem;
+  height: 100%;
+}
+
+.location-datetime {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--clr-primary-2);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* DAYS */
+.days-options > li {
+  display: grid;
+  align-items: center;
+}
+
+.days-header {
+  justify-content: space-between;
+  width: 70%;
+}
+
+.days-day {
+  justify-content: space-evenly;
+}

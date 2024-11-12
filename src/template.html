@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Weather APP</h1>
+      </header>
+      <main>
+        <nav class="nav">
+          <div class="search"></div>
+          <input class="nav-search-input" type="search" />
+          <button class="nav-search-button">Get</button>
+        </nav>
+        <div class="window">
+          <section class="location widget">
+            <header class="header">
+              <h2 class="location-address"></h2>
+              <span class="location-timezone"></span>
+            </header>
+            <div id="loader" class="hidden"></div>
+            <p class="location-description"></p>
+            <div class="location-datetime">
+              <p class="location-datetime-date"></p>
+              <p class="location-datetime-time"></p>
+            </div>
+          </section>
+          <section class="weather_condition widget">
+            <header class="header">
+              <h2 class="weather_condition-heading heading">
+                Weather Condition
+              </h2>
+            </header>
+            <div id="loader" class="hidden"></div>
+            <table class="weather_condition-table">
+              <tr>
+                <th>Condition:</th>
+                <td class="weather_condition-condition"></td>
+              </tr>
+              <tr>
+                <th>Temperature:</th>
+                <td class="weather_condition-temperature"></td>
+              </tr>
+              <tr>
+                <th>Feels Like:</th>
+                <td class="weather_condition-feels_like"></td>
+              </tr>
+              <tr>
+                <th>Wind Direction:</th>
+                <td class="weather_condition-wind_direction"></td>
+              </tr>
+              <tr>
+                <th>Wind Gust:</th>
+                <td class="weather_condition-wind_gust"></td>
+              </tr>
+              <tr>
+                <th>Wind Speed:</th>
+                <td class="weather_condition-wind_speed"></td>
+              </tr>
+            </table>
+          </section>
+          <section class="temperature widget">
+            <header class="header">
+              <h2 class="temperature-heading heading">Temperature</h2>
+            </header>
+            <div id="loader" class="hidden"></div>
+            <ul>
+              <li>
+                <p>Max: <span class="temperature-max">24&deg;c</span></p>
+              </li>
+              <li>
+                <p>
+                  Current: <span class="temperature-current">24&deg;c</span>
+                </p>
+              </li>
+              <li>
+                <p>Min: <span class="temperature-min">24&deg;c</span></p>
+              </li>
+            </ul>
+          </section>
+          <section class="days widget">
+            <header class="header">
+              <h2>This Week's Weather</h2>
+              <ul class="days-options">
+                <li>Filter :</li>
+                <li><button>Temperature</button></li>
+                <li><button>Wind</button></li>
+                <li><button>Twilight</button></li>
+              </ul>
+            </header>
+            <div id="loader" class="hidden"></div>
+            <ol class="days-day">
+              <li>
+                <h3 class="days-heading">Monday</h3>
+                <span class="days-datetime"></span>
+                <p class="days-condition"></p>
+                <ul class="days-temperature">
+                  <li>
+                    <p>
+                      Max: <span class="days-temperature-max">24&deg;c</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Current:
+                      <span class="days-temperature-current">24&deg;c</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Min: <span class="days-temperature-min">24&deg;c</span>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h3 class="days-heading">Tuesday</h3>
+                <span class="days-datetime"></span>
+                <p class="days-condition"></p>
+                <ul class="days-temperature">
+                  <li>
+                    <p>
+                      Max: <span class="days-temperature-max">24&deg;c</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Current:
+                      <span class="days-temperature-current">24&deg;c</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Min: <span class="days-temperature-min">24&deg;c</span>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h3 class="days-heading">Wednesday</h3>
+                <span class="days-datetime"></span>
+                <p class="days-condition"></p>
+                <ul class="days-temperature">
+                  <li>
+                    <p>
+                      Max: <span class="days-temperature-max">24&deg;c</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Current:
+                      <span class="days-temperature-current">24&deg;c</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Min: <span class="days-temperature-min">24&deg;c</span>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h3 class="days-heading">Thursday</h3>
+                <span class="days-datetime"></span>
+                <p class="days-condition"></p>
+                <ul class="days-temperature">
+                  <li>
+                    <p>
+                      Max: <span class="days-temperature-max">24&deg;c</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Current:
+                      <span class="days-temperature-current">24&deg;c</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Min: <span class="days-temperature-min">24&deg;c</span>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h3 class="days-heading">Friday</h3>
+                <span class="days-datetime"></span>
+                <p class="days-condition"></p>
+                <ul class="days-temperature">
+                  <li>
+                    <p>
+                      Max: <span class="days-temperature-max">24&deg;c</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Current:
+                      <span class="days-temperature-current">24&deg;c</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Min: <span class="days-temperature-min">24&deg;c</span>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h3 class="days-heading">Saturday</h3>
+                <span class="days-datetime"></span>
+                <p class="days-condition"></p>
+                <ul class="days-temperature">
+                  <li>
+                    <p>
+                      Max: <span class="days-temperature-max">24&deg;c</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Current:
+                      <span class="days-temperature-current">24&deg;c</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Min: <span class="days-temperature-min">24&deg;c</span>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h3 class="days-heading">Sunday</h3>
+                <span class="days-datetime"></span>
+                <p class="days-condition"></p>
+                <ul class="days-temperature">
+                  <li>
+                    <p>
+                      Max: <span class="days-temperature-max">24&deg;c</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Current:
+                      <span class="days-temperature-current">24&deg;c</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Min: <span class="days-temperature-min">24&deg;c</span>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
