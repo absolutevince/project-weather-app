@@ -32,7 +32,7 @@
           <section class="weather_condition widget">
             <header class="header">
               <h2 class="weather_condition-heading heading">
-                Weather Condition
+                Current Conditions
               </h2>
             </header>
             <div id="loader" class="hidden"></div>
@@ -63,199 +63,38 @@
               </tr>
             </table>
           </section>
-          <section class="temperature widget">
+          <section class="today widget">
             <header class="header">
-              <h2 class="temperature-heading heading">Temperature</h2>
+              <h2 class="today-heading heading">Today</h2>
+              <span>Sunrise: <span class="today-sunrise"></span></span>
+              <span>Sunset: <span class="today-sunset"></span></span>
             </header>
             <div id="loader" class="hidden"></div>
-            <ul>
-              <li>
-                <p>Max: <span class="temperature-max">24&deg;c</span></p>
-              </li>
-              <li>
-                <p>
-                  Current: <span class="temperature-current">24&deg;c</span>
-                </p>
-              </li>
-              <li>
-                <p>Min: <span class="temperature-min">24&deg;c</span></p>
-              </li>
-            </ul>
+            <table>
+              <tr>
+                <th>Conditions</th>
+                <td class="today-conditions"></td>
+              </tr>
+              <tr>
+                <th>Max Temperature</th>
+                <td class="today-temperature-max"></td>
+              </tr>
+              <tr>
+                <th>Temperature</th>
+                <td class="today-temperature"></td>
+              </tr>
+              <tr>
+                <th>Min Temperature</th>
+                <td class="today-temperature-min"></td>
+              </tr>
+            </table>
           </section>
-          <section class="days widget">
+          <section class="forecast widget">
             <header class="header">
-              <h2>This Week's Weather</h2>
-              <ul class="days-options">
-                <li>Filter :</li>
-                <li><button>Temperature</button></li>
-                <li><button>Wind</button></li>
-                <li><button>Twilight</button></li>
-              </ul>
+              <h2>7 days Forecast</h2>
             </header>
             <div id="loader" class="hidden"></div>
-            <ol class="days-day">
-              <li>
-                <h3 class="days-heading">Monday</h3>
-                <span class="days-datetime"></span>
-                <p class="days-condition"></p>
-                <ul class="days-temperature">
-                  <li>
-                    <p>
-                      Max: <span class="days-temperature-max">24&deg;c</span>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Current:
-                      <span class="days-temperature-current">24&deg;c</span>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Min: <span class="days-temperature-min">24&deg;c</span>
-                    </p>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <h3 class="days-heading">Tuesday</h3>
-                <span class="days-datetime"></span>
-                <p class="days-condition"></p>
-                <ul class="days-temperature">
-                  <li>
-                    <p>
-                      Max: <span class="days-temperature-max">24&deg;c</span>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Current:
-                      <span class="days-temperature-current">24&deg;c</span>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Min: <span class="days-temperature-min">24&deg;c</span>
-                    </p>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <h3 class="days-heading">Wednesday</h3>
-                <span class="days-datetime"></span>
-                <p class="days-condition"></p>
-                <ul class="days-temperature">
-                  <li>
-                    <p>
-                      Max: <span class="days-temperature-max">24&deg;c</span>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Current:
-                      <span class="days-temperature-current">24&deg;c</span>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Min: <span class="days-temperature-min">24&deg;c</span>
-                    </p>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <h3 class="days-heading">Thursday</h3>
-                <span class="days-datetime"></span>
-                <p class="days-condition"></p>
-                <ul class="days-temperature">
-                  <li>
-                    <p>
-                      Max: <span class="days-temperature-max">24&deg;c</span>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Current:
-                      <span class="days-temperature-current">24&deg;c</span>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Min: <span class="days-temperature-min">24&deg;c</span>
-                    </p>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <h3 class="days-heading">Friday</h3>
-                <span class="days-datetime"></span>
-                <p class="days-condition"></p>
-                <ul class="days-temperature">
-                  <li>
-                    <p>
-                      Max: <span class="days-temperature-max">24&deg;c</span>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Current:
-                      <span class="days-temperature-current">24&deg;c</span>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Min: <span class="days-temperature-min">24&deg;c</span>
-                    </p>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <h3 class="days-heading">Saturday</h3>
-                <span class="days-datetime"></span>
-                <p class="days-condition"></p>
-                <ul class="days-temperature">
-                  <li>
-                    <p>
-                      Max: <span class="days-temperature-max">24&deg;c</span>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Current:
-                      <span class="days-temperature-current">24&deg;c</span>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Min: <span class="days-temperature-min">24&deg;c</span>
-                    </p>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <h3 class="days-heading">Sunday</h3>
-                <span class="days-datetime"></span>
-                <p class="days-condition"></p>
-                <ul class="days-temperature">
-                  <li>
-                    <p>
-                      Max: <span class="days-temperature-max">24&deg;c</span>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Current:
-                      <span class="days-temperature-current">24&deg;c</span>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Min: <span class="days-temperature-min">24&deg;c</span>
-                    </p>
-                  </li>
-                </ul>
-              </li>
-            </ol>
+            <ol class="forecast-container"></ol>
           </section>
         </div>
       </main>
