@@ -1,5 +1,6 @@
 import { formatTime } from "../module/formatDateTime";
 import { speedMetricKmh, tempMetricCelsius } from "../module/metricString";
+import getWindDirection from "../module/getWindDirection";
 
 export function locationDataTemplate(data) {
   if (!data) {
@@ -55,30 +56,6 @@ export function weatherConditionDataTemplate(data) {
     return;
   }
 
-  function getWindDirection(deg) {
-    console.log(deg);
-    const index = Math.floor(deg / 22.5);
-    const dirs = [
-      "North",
-      "North-Northeast",
-      "Northeast",
-      "East-Northeast",
-      "Northeast",
-      "East-Southeast",
-      "Southeast",
-      "South-Southeast",
-      "South",
-      "South-Southwest",
-      "Southwest",
-      "West-Southwest",
-      "West",
-      "West-Northwest",
-      "Northwest",
-      "North-Northwest",
-    ];
-    return dirs[index % 16];
-  }
-
   return {
     conditions: data.currentConditions.conditions,
     temperature: data.currentConditions.temp + tempMetricCelsius,
@@ -121,7 +98,7 @@ export function forecastDataTemplate(data) {
       tempMax: d.tempmax,
       temp: d.temp,
       tempMin: d.tempmin,
-      windDir: d.winddir,
+      windDir: getWindDirection(d.winddir),
       windGust: d.windgust,
       windSpeed: d.windspeed,
     });

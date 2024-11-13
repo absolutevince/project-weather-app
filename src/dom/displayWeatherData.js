@@ -8,14 +8,14 @@ import { speedMetricKmh, tempMetricCelsius } from "../module/metricString";
 
 export function displayCurrentConditions(data) {
   const template = weatherConditionDataTemplate(data);
-  const condition = document.querySelector(".weather_condition-condition");
-  const temperature = document.querySelector(".weather_condition-temperature");
-  const feelsLike = document.querySelector(".weather_condition-feels_like");
+  const condition = document.querySelector(".current_conditions-conditions");
+  const temperature = document.querySelector(".current_conditions-temperature");
+  const feelsLike = document.querySelector(".current_conditions-feels_like");
   const windDirection = document.querySelector(
-    ".weather_condition-wind_direction"
+    ".current_conditions-wind_direction"
   );
-  const windGust = document.querySelector(".weather_condition-wind_gust");
-  const windSpeed = document.querySelector(".weather_condition-wind_speed");
+  const windGust = document.querySelector(".current_conditions-wind_gust");
+  const windSpeed = document.querySelector(".current_conditions-wind_speed");
 
   condition.textContent = template.conditions;
   temperature.textContent = template.temperature;
@@ -67,12 +67,14 @@ export function displayForecast(data) {
     const dayName = document.createElement("h3");
     const date = document.createElement("span");
     const conditions = document.createElement("p");
-    const div1 = document.createElement("div");
-    const div2 = document.createElement("div");
+    const datetimeWrapper = document.createElement("div");
+    const conditionsWrapper = document.createElement("div");
 
     wrapper.className = "day-wrapper";
     dayName.className = "day-day";
     date.className = "day-date";
+    datetimeWrapper.classList = "day-datetime-wrapper";
+    conditionsWrapper.classList = "day-conditions-wrapper";
 
     conditions.className = "day-conditions";
 
@@ -80,17 +82,18 @@ export function displayForecast(data) {
     date.textContent = day.date;
     conditions.textContent = day.conditions;
 
-    div1.append(dayName, date);
-    div2.append(conditions);
+    datetimeWrapper.append(dayName, date);
+    conditionsWrapper.append(conditions);
 
-    wrapper.append(div1, div2);
+    wrapper.append(datetimeWrapper, conditionsWrapper);
 
     wrapper.append(
       createTable(
+        "Temperature",
         [
-          { name: "Temerature max", value: day.tempMax },
-          { name: "Temperature", value: day.temp },
-          { name: "Temperature min", value: day.tempMin },
+          { name: "max", value: day.tempMax, className: "max" },
+          { name: "normal", value: day.temp, className: "temp" },
+          { name: "min", value: day.tempMin, className: "min" },
         ],
         tempMetricCelsius
       )
@@ -98,30 +101,42 @@ export function displayForecast(data) {
 
     wrapper.append(
       createTable(
+        "Wind",
         [
-          { name: "Wind Direction", value: day.windDir },
-          { name: "Wind Speed", value: day.windSpeed },
-          { name: "Wind Gust", value: day.windGust },
+          {
+            name: "Direction",
+            value: day.windDir,
+            valueType: "dir",
+            className: "wind",
+          },
+          { name: "Speed", value: day.windSpeed, className: "wind" },
+          { name: "Gust", value: day.windGust, className: "wind" },
         ],
         speedMetricKmh
       )
     );
-    function createTable(arr, metric) {
+    function createTable(header, arr, metric) {
       const table = document.createElement("table");
+      const thead = document.createElement("thead");
+      const tbody = document.createElement("tbody");
       table.className = "day-table";
+      thead.className = "day-table-thead";
+
+      thead.textContent = header;
+      table.append(thead, tbody);
       arr.forEach((t) => {
         const tr = document.createElement("tr");
         const th = document.createElement("th");
         const td = document.createElement("td");
 
-        tr.className = "day-table-tr";
-        th.className = "day-table-th";
-        td.className = "day-table-td";
+        tr.className = `day-table-tr ${t.className ? t.className : ""}`;
+        th.className = `day-table-th ${t.className ? t.className : ""}`;
+        td.className = `day-table-td ${t.className ? t.className : ""}`;
 
         th.textContent = t.name;
-        td.textContent = t.value + metric;
+        td.textContent = `${t.value} ${t.valueType === "dir" ? "" : metric}`;
         tr.append(th, td);
-        table.append(tr);
+        tbody.append(tr);
       });
 
       return table;
@@ -130,27 +145,3 @@ export function displayForecast(data) {
     container.append(wrapper);
   });
 }
-
-// <li>
-// <h3 class="days-heading"></h3>
-// <span class="days-datetime"></span>
-// <p class="days-condition"></p>
-// <ul class="days-temperature">
-//   <li>
-//     <p>
-//       Max: <span class="days-temperature-max">24&deg;c</span>
-//     </p>
-//   </li>
-//   <li>
-//     <p>
-//       Current:
-//       <span class="days-temperature-current">24&deg;c</span>
-//     </p>
-//   </li>
-//   <li>
-//     <p>
-//       Min: <span class="days-temperature-min">24&deg;c</span>
-//     </p>
-//   </li>
-// </ul>
-// </li>

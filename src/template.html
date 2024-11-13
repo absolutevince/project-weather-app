@@ -29,48 +29,65 @@
               <p class="location-datetime-time"></p>
             </div>
           </section>
-          <section class="weather_condition widget">
+          <section class="current_conditions widget">
             <header class="header">
-              <h2 class="weather_condition-heading heading">
+              <h2 class="current_conditions-heading heading">
                 Current Conditions
               </h2>
             </header>
             <div id="loader" class="hidden"></div>
-            <table class="weather_condition-table">
+            <table class="current_conditions-table">
               <tr>
-                <th>Condition:</th>
-                <td class="weather_condition-condition"></td>
+                <th>Conditions</th>
+                <td class="current_conditions-conditions"></td>
               </tr>
               <tr>
-                <th>Temperature:</th>
-                <td class="weather_condition-temperature"></td>
+                <th>Temperature</th>
+                <td class="current_conditions-temperature"></td>
               </tr>
               <tr>
-                <th>Feels Like:</th>
-                <td class="weather_condition-feels_like"></td>
+                <th>Feels Like</th>
+                <td class="current_conditions-feels_like"></td>
               </tr>
               <tr>
-                <th>Wind Direction:</th>
-                <td class="weather_condition-wind_direction"></td>
+                <th>Wind Direction</th>
+                <td class="current_conditions-wind_direction"></td>
               </tr>
               <tr>
-                <th>Wind Gust:</th>
-                <td class="weather_condition-wind_gust"></td>
+                <th>Wind Gust</th>
+                <td class="current_conditions-wind_gust"></td>
               </tr>
               <tr>
-                <th>Wind Speed:</th>
-                <td class="weather_condition-wind_speed"></td>
+                <th>Wind Speed</th>
+                <td class="current_conditions-wind_speed"></td>
               </tr>
             </table>
           </section>
           <section class="today widget">
             <header class="header">
               <h2 class="today-heading heading">Today</h2>
-              <span>Sunrise: <span class="today-sunrise"></span></span>
-              <span>Sunset: <span class="today-sunset"></span></span>
+              <span class="today-twilight">
+                <img
+                  class="icon"
+                  src="./asset/icons/sunrise.png"
+                  alt="sunrise"
+                  width="42"
+                  height="42"
+                />
+                <span class="today-sunrise"></span>
+              </span>
+              <span class="today-twilight">
+                <img
+                  class="icon"
+                  src="./asset/icons/sunset.png"
+                  alt="sunrise"
+                  width="42"
+                  height="42" />
+                <span class="today-sunset"></span
+              ></span>
             </header>
             <div id="loader" class="hidden"></div>
-            <table>
+            <table class="today-conditions-table">
               <tr>
                 <th>Conditions</th>
                 <td class="today-conditions"></td>
@@ -90,7 +107,7 @@
             </table>
           </section>
           <section class="forecast widget">
-            <header class="header">
+            <header class="forecast-header">
               <h2>7 days Forecast</h2>
             </header>
             <div id="loader" class="hidden"></div>
